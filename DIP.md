@@ -38,7 +38,7 @@ class PasswordReminder {
 }
 ```
 
-```cpp
+```
 interface DBConnectionInterface {
     public function connect();
 }    
