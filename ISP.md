@@ -34,7 +34,7 @@
 
 ## 代码
 
-```
+```javascript
 # 反例：图形接口
 # 缺点：有一些平面的图形，没有体积，但是又要实现volume这个接口
 interface ShapeInterface {
@@ -44,7 +44,7 @@ interface ShapeInterface {
 
 ```
 
-```
+```javascript
 # 修改
 interface ShapeInterface {
     public function area();
@@ -66,7 +66,7 @@ class Cuboid implements ShapeInterface, SolidShapeInterface {
 
 ```
 
-```
+```javascript
 # 优化
 interface ManageShapeInterface {
     public function calculate();
@@ -109,7 +109,8 @@ volume();
 
 * 不管一种语言是否提供一个单独的构造来表示接口，所有的对象都有一个由该对象所有属性和方法组成的隐式接口。参考如下代码：
 
-```
+``````javascript
+
 var exampleBinder = {};
 exampleBinder.modelObserver = (function() {
     /* 私有变量 */
