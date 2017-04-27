@@ -28,7 +28,7 @@
 ## 参考资料
 
 
-[](https://zhuanlan.zhihu.com/p/24175489)
+[小话设计模式原则之：依赖倒置原则DIP](https://zhuanlan.zhihu.com/p/24175489)
 
 [S.O.L.I.D五大原则之依赖倒置原则DIP](https://www.kancloud.cn/kancloud/deep-understand-javascript/43700)
 
