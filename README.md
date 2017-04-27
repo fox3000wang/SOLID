@@ -1,3 +1,27 @@
-# My Awesome Book
+# 设计模式SOLID五大原则
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+**SOLID**是Robert C. Martin的**头五个面向对象设计（OOD）原理的缩写**，通常被称为[Bob叔叔](https://en.wikipedia.org/wiki/Robert_Cecil_Martin)。
+
+这些原则在组合在一起后，可以方便程序员开发易于维护和扩展的软件。它们还使开发人员轻松避免代码气味，轻松重构代码，也是敏捷或自适应软件开发的一部分。
+
+**注意**：_这只是一个简单的“欢迎来到**SOLID**”的文章，它只是说明**SOLID**是什么_。
+
+### SOLID代表：
+
+当扩展缩略语可能看起来很复杂，但它们很简单的掌握。
+
+* **S**
+  - 单一责任原则
+* **O**
+  - 开闭原理
+* **L**
+  - Liskov替代原理
+* **I**
+  - 界面隔离原理
+* **D**
+  依赖性反转原则
+
+我们来看看每个原则，以了解为什么SOLID可以帮助我们更好的开发人员。
+
+
+
