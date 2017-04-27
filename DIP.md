@@ -133,6 +133,84 @@ feed对象的接口可能按照装，也可能没有照装trackMap函数的要�
 
 为了将于Google maps类库的语义耦合翻转过来，我们需要重写设计trackMap函数，以便对一个隐式接口（抽象出地图提供商provider的接口）进行语义耦合，我们还需要一个适配Google Maps API的一个实现对象，如下是重构后的trackMap函数：
 
+```
+$.fn.trackMap = function(options) {
+    var defaults = {
+        /* defaults */
+    };
+
+    options = $.extend({}, defaults, options);
+
+    options.provider.showMap(
+        this[0],
+        options.latitude,
+        options.longitude,
+        options.icon,
+        options.title);
+
+    options.feed.update(function(latitude, longitude) {
+        options.provider.updateMap(latitude, longitude);
+    });
+
+    return this;
+};
+
+$("#map_canvas").trackMap({
+    latitude: 35.044640193770725,
+    longitude: -89.98193264007568,
+    icon: 'http://bit.ly/zjnGDe',
+    title: 'Tracking Number: 12345',
+    feed: updater,
+    provider: trackMap.googleMapsProvider
+});
+
+```
+在该版本里，我们重新设计了trackMap函数以及需要的一个地图提供商接口，然后将实现的细节挪到了一个单独的googleMapsProvider组件，该组件可能独立封装成一个单独的JavaScript模块。如下是我的googleMapsProvider实现：
+
+```
+trackMap.googleMapsProvider = (function() {
+    var marker, map;
+
+    return {
+        showMap: function(element, latitude, longitude, icon, title) {
+            var mapOptions = {
+                center: new google.maps.LatLng(latitude, longitude),
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            },
+                pos = new google.maps.LatLng(latitude, longitude);
+
+            map = new google.maps.Map(element, mapOptions);
+
+            marker = new google.maps.Marker({
+                position: pos,
+                title: title,
+                icon: icon
+            });
+
+            marker.setMap(map);
+        },
+        updateMap: function(latitude, longitude) {
+            marker.setMap(null);
+            var newLatLng = new google.maps.LatLng(latitude,longitude);
+            marker.position = newLatLng;
+            marker.setMap(map);
+            map.setCenter(newLatLng);
+        }
+    };
+})();
+```
+做了上述这些改变以后，trackMap函数将变得非常有弹性了，不必依赖于Google Maps API，相反可以任意替换其它的地图提供商，那就是说可以按照程序的需求去适配任何地图提供商。
+
+
+---
+## 何时依赖注入？
+
+有点不太相关，其实依赖注入的概念经常和依赖倒置原则混在一起，为了澄清这个不同，我们有必要来解释一下：
+
+依赖注入是控制反转的一个特殊形式，反转的意思一个组件如何获取它的依赖。依赖注入的意思就是：依赖提供给组件，而不是组件去获取依赖，意思是创建一个依赖的实例，通过工厂去请求这个依赖，通过Service Locator或组件自身的初始化去请求这个依赖。依赖倒置原则和依赖注入都是关注依赖，并且都是用于反转。不过，依赖倒置原则没有关注组件如何获取依赖，而是只关注高层模块如何从低层模块里解耦出来。某种意义上说，依赖倒置原则是控制反转的另外一种形式，这里反转的是哪个模块定义接口（从低层里定义，反转到高层里定义）。
+
+
 
 
 
