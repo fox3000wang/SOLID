@@ -1,4 +1,6 @@
-# 设计模式SOLID五大原则
+# SOLID
+
+## 设计模式SOLID五大原则
 
 **SOLID**是Robert C. Martin的**头五个面向对象设计（OOD）原理的缩写**，通常被称为[Bob叔叔](https://en.wikipedia.org/wiki/Robert_Cecil_Martin)。
 
