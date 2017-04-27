@@ -27,7 +27,7 @@
 ---
 ## 代码
 
-```C++
+```cpp
 # 反例
 class PasswordReminder {
     private $dbConnection;
