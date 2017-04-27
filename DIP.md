@@ -40,7 +40,7 @@ class PasswordReminder {
 
 
 ```javascript
-
+# 
 interface DBConnectionInterface {
     public function connect();
 }  
