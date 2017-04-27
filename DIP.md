@@ -27,7 +27,7 @@
 ---
 ## 代码
 
-```cpp
+```javascript
 # 反例
 class PasswordReminder {
     private $dbConnection;
