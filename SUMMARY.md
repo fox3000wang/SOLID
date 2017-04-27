@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [介绍](README.md)
 * [单一职责SRP](chapter1.md)
 * [开闭原则OCP](2.md)
 * [里氏替换原则LSP](3.md)
