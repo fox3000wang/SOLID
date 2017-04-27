@@ -27,7 +27,7 @@
 ---
 ## 代码
 
-``` blcak
+``` javascript
 # 反例
 class PasswordReminder {
     private $dbConnection;
