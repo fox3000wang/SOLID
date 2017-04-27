@@ -28,5 +28,7 @@
 ## 参考资料
 
 
+[](https://zhuanlan.zhihu.com/p/24175489)
 
+[](https://www.kancloud.cn/kancloud/deep-understand-javascript/43700)
 
