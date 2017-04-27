@@ -109,7 +109,7 @@ volume();
 
 * 不管一种语言是否提供一个单独的构造来表示接口，所有的对象都有一个由该对象所有属性和方法组成的隐式接口。参考如下代码：
 
-``````javascript
+```javascript
 
 var exampleBinder = {};
 exampleBinder.modelObserver = (function() {
