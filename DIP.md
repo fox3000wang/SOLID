@@ -30,5 +30,5 @@
 
 [](https://zhuanlan.zhihu.com/p/24175489)
 
-[](https://www.kancloud.cn/kancloud/deep-understand-javascript/43700)
+[S.O.L.I.D五大原则之依赖倒置原则DIP](https://www.kancloud.cn/kancloud/deep-understand-javascript/43700)
 
