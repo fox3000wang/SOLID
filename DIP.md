@@ -27,6 +27,16 @@
 ---
 ## 代码
 
+```
+# 反例
+class PasswordReminder {
+    private $dbConnection;
+
+    public function __construct(MySQLConnection $dbConnection) {
+        $this->dbConnection = $dbConnection;
+    }
+}
+```
 
 
 
