@@ -29,7 +29,6 @@
 
 [S.O.L.I.D: The First 5 Principles of Object Oriented Design](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
-
 [小话设计模式原则之：依赖倒置原则DIP](https://zhuanlan.zhihu.com/p/24175489)
 
 [S.O.L.I.D五大原则之依赖倒置原则DIP](https://www.kancloud.cn/kancloud/deep-understand-javascript/43700)
